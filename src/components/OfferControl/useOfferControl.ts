@@ -1,10 +1,11 @@
+import { useState } from "react";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useSnackbar } from "notistack";
 import useDebounce from "@/hooks/useDebounce";
 import {
   getOffers,
   useSetOfferSelected,
 } from "@/store/reducers/offers/offers.hooks";
-import { useMediaQuery } from "@mui/material";
-import { useState } from "react";
 
 export interface OfferControlProps {
   value: number;
@@ -15,6 +16,7 @@ export interface OfferControlProps {
 
 const useOfferControl = (props: OfferControlProps) => {
   const isMobile = useMediaQuery("(max-width: 550px)");
+  const { enqueueSnackbar } = useSnackbar();
   const { selected } = getOffers();
   const setOfferSelected = useSetOfferSelected();
   const [amountRange, setAmountRange] = useState(props.value);
@@ -63,6 +65,12 @@ const useOfferControl = (props: OfferControlProps) => {
   const monthlyPercent = (amountRange / 100) * economyPercent;
   const yearlyPercent = monthlyPercent * 12;
 
+  const notify = (text: string) => () =>
+    enqueueSnackbar(text, {
+      variant: "success",
+      anchorOrigin: { horizontal: "right", vertical: "top" },
+    });
+
   return {
     state: {
       amountRange,
@@ -80,6 +88,7 @@ const useOfferControl = (props: OfferControlProps) => {
       setOfferSelected,
       setAmountText,
       setAmountRange,
+      notify,
     },
   };
 };

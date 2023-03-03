@@ -4,6 +4,7 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
+import Button from "@mui/material/Button";
 
 import parseToCurrencyBRL from "@/utils/parseToCurrencyBRL";
 import { useTranslation } from "react-i18next";
@@ -25,6 +26,7 @@ const OfferControl = (props: OfferControlProps) => {
           flexDirection: "column-reverse",
           gap: 1,
         },
+        position: "relative",
       }}
     >
       <Stack flex="1" gap="5px" alignItems="flex-start">
@@ -97,7 +99,7 @@ const OfferControl = (props: OfferControlProps) => {
         />
       )}
 
-      <Stack flex="0.5" alignItems="flex-start" gap="0.5rem">
+      <Stack flex="0.5" alignItems="flex-start" gap="0.5rem" minWidth="300px">
         <Box
           sx={{
             backgroundColor: "primary.main",
@@ -167,6 +169,15 @@ const OfferControl = (props: OfferControlProps) => {
               {t("per-month")}
             </Typography>
           </Box>
+        </Stack>
+        <Stack width="100%">
+          <Button
+            onClick={methods.notify(t("successfully-acquired"))}
+            disabled={!state.selected}
+            variant="outlined"
+          >
+            {t("hire")}
+          </Button>
         </Stack>
       </Stack>
     </Paper>

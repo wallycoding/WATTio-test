@@ -40,7 +40,6 @@ const DrawerSettings = () => {
       if (userChoice.outcome === "accepted") setShowInstallApp(false);
     }
   };
-  console.log(i18next.language);
 
   return (
     <>
