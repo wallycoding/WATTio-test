@@ -78,6 +78,7 @@ const OfferControl = (props: OfferControlProps) => {
           />
         </Stack>
         <Slider
+          data-testid="range"
           value={state.amountRange}
           onChange={(event, value) => {
             methods.setAmountRange(value as number);
@@ -175,6 +176,7 @@ const OfferControl = (props: OfferControlProps) => {
             onClick={methods.notify(t("successfully-acquired"))}
             disabled={!state.selected}
             variant="outlined"
+            data-testid="hire-button"
           >
             {t("hire")}
           </Button>

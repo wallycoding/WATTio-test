@@ -9,12 +9,6 @@ import { useTranslation } from "react-i18next";
 const Header = () => {
   const { t } = useTranslation();
 
-  // const points = [
-  //   "Melhores ofertas.",
-  //   "Ótimizando sua vida.",
-  //   "Energia totalmente limpa.",
-  //   "Economize seu dinheiro de forma inteligente",
-  // ];
   const points = [...Array(4).keys()].map(
     (key) => `positive-points.point-${key}`
   );
