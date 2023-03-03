@@ -40,6 +40,7 @@ const DrawerSettings = () => {
       if (userChoice.outcome === "accepted") setShowInstallApp(false);
     }
   };
+  console.log(i18next.language);
 
   return (
     <>
@@ -101,7 +102,7 @@ const DrawerSettings = () => {
                 variant="standard"
                 size="small"
               >
-                <MenuItem value="en">{t("en")}</MenuItem>
+                <MenuItem value="en-us">{t("en")}</MenuItem>
                 <MenuItem value="pt-br">{t("pt-br")}</MenuItem>
               </Select>
             </Stack>
