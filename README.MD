@@ -1,7 +1,7 @@
 ###### Teste da WATTio
 ## Resumo
 Link: https://wattio-test.web.app/
-Tecnologias: Vite, React, Material UI, i18next, redux.`
+Tecnologias: Vite, Vitest, React, Material UI, i18next, redux.`
 Estratégias notáveis
   - Estados isolados
   - Entidade
@@ -65,3 +65,9 @@ Com uma aplicação PWA, é possível torná-la mais acessível aos usuários, p
 Usei o figma para não perder muito tempo, mas usei apenas como base de rascunho para ter uma ideia rápida de como ficaria.
 
 Link: [Figma WAATio](https://www.figma.com/file/dwpB8FtYCIK1ADquFtmWSZ/Test-WATTio?node-id=0%3A1&t=ozsGon6BKfkjED2G-1)
+
+## Sobre testes
+
+Fiz alguns testes simples para avaliar o funcionamento do código. Embora eu tenha apenas conhecimentos básicos em testes.
+
+Embora fosse possível aplicar testes em cada componente do projeto, optei por focar meus testes no arquivo App.tsx para verificar se ele contém todo o conteúdo necessário para o correto funcionamento do projeto.
